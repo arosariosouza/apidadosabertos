@@ -1,0 +1,6 @@
+.tool-versions
+.venv
+.env
+*.sqlite3
+.vscode
+.idea
