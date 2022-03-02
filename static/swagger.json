@@ -56,6 +56,171 @@
                     ]
                 }
             },
+            "Estabelecimento": {
+                "type": "object",
+                "properties": {
+                    "codigo_cnes": {"type": "integer"},
+                    "numero_cnpj_entidade": {"type": "string"},
+                    "nome_razao_social": {"type": "string"},
+                    "nome_fantasia": {"type": "string"},
+                    "natureza_organizacao_entidade": {"type": "string"},
+                    "tipo_gestao": {"type": "string"},
+                    "descricao_nivel_hierarquia": {"type": "string"},
+                    "descricao_esfera_administrativa": {"type": "string"},
+                    "codigo_tipo_unidade": {"type": "integer"},
+                    "codigo_cep_estabelecimento": {"type": "string"},
+                    "endereco_estabelecimento": {"type": "string"},
+                    "numero_estabelecimento": {"type": "string"},
+                    "bairro_estabelecimento": {"type": "string"},
+                    "numero_telefone_estabelecimento": {"type": "string"},
+                    "latitude_estabelecimento_decimo_grau": {"type": "float"},
+                    "longitude_estabelecimento_decimo_grau": {"type": "float"},
+                    "endereco_email_estabelecimento": {"type": "string"},
+                    "numero_cnpj": {"type": "string"},
+                    "codigo_identificador_turno_atendimento": {"type": "string"},
+                    "descricao_turno_atendimento": {"type": "string"},
+                    "estabelecimento_faz_atendimento_ambulatorial_sus": {"type": "string"},
+                    "codigo_estabelecimento_saude": {"type": "string"},
+                    "codigo_uf": {"type": "integer"},
+                    "codigo_ibge_municipio": {"type": "integer"},
+                    "descricao_natureza_juridica_estabelecimento": {"type": "string"},
+                    "codigo_motivo_desabilitacao_estabelecimento": {"type": "string"},
+                    "estabelecimento_possui_centro_cirurgico": {"type": "integer"},
+                    "estabelecimento_possui_centro_obstetrico": {"type": "integer"},
+                    "estabelecimento_possui_centro_neonatal": {"type": "integer"},
+                    "estabelecimento_possui_atendimento_hospitalar": {"type": "integer"},
+                    "estabelecimento_possui_servico_apoio": {"type": "integer"},
+                    "estabelecimento_possui_atendimento_ambulatorial": {"type": "integer"},
+                    "codigo_atividade_ensino_unidade": {"type": "integer"},
+                    "codigo_natureza_organizacao_unidade": {"type": "integer"},
+                    "codigo_nivel_hierarquia_unidade": {"type": "integer"},
+                    "codigo_esfera_administrativa_unidade": {"type": "integer"}
+                },
+                "example": {
+                    "codigo_cnes": 124,
+                    "numero_cnpj_entidade": "11294402000162",
+                    "nome_razao_social": "PREFEITURA MUNICIPAL DO CABO DE SANTO AGOSTINHO",
+                    "nome_fantasia": "USF SAO FRANCISCO I",
+                    "natureza_organizacao_entidade": "",
+                    "tipo_gestao": "M",
+                    "descricao_nivel_hierarquia": "",
+                    "descricao_esfera_administrativa": "",
+                    "codigo_tipo_unidade": 2,
+                    "codigo_cep_estabelecimento": "54530591",
+                    "endereco_estabelecimento": "RUA MANOEL DOMINGOS BARROS",
+                    "numero_estabelecimento": "38",
+                    "bairro_estabelecimento": "SAO FRANCISCO",
+                    "numero_telefone_estabelecimento": "(81)35249185",
+                    "latitude_estabelecimento_decimo_grau": -8.287,
+                    "longitude_estabelecimento_decimo_grau": -35.035,
+                    "endereco_email_estabelecimento": "",
+                    "numero_cnpj": "",
+                    "codigo_identificador_turno_atendimento": "03",
+                    "descricao_turno_atendimento": "ATENDIMENTOS NOS TURNOS DA MANHA E A TARDE",
+                    "estabelecimento_faz_atendimento_ambulatorial_sus": "SIM",
+                    "codigo_estabelecimento_saude": "2602900000124",
+                    "codigo_uf": 26,
+                    "codigo_ibge_municipio": 260290,
+                    "descricao_natureza_juridica_estabelecimento": "1244",
+                    "codigo_motivo_desabilitacao_estabelecimento": "",
+                    "estabelecimento_possui_centro_cirurgico": 0,
+                    "estabelecimento_possui_centro_obstetrico": 0,
+                    "estabelecimento_possui_centro_neonatal": 0,
+                    "estabelecimento_possui_atendimento_hospitalar": 0,
+                    "estabelecimento_possui_servico_apoio": 1,
+                    "estabelecimento_possui_atendimento_ambulatorial": 0,
+                    "codigo_atividade_ensino_unidade": "04",
+                    "codigo_natureza_organizacao_unidade": "",
+                    "codigo_nivel_hierarquia_unidade": "",
+                    "codigo_esfera_administrativa_unidade": ""
+                }
+            },
+            "Estabelecimentos": {
+                "type": "array",
+                "items": {
+                    "$ref":"#/components/schemas/Estabelecimento"
+                },
+                "example": {
+                    "Estabelecimentos": [
+                        {
+                            "codigo_cnes": 124,
+                            "numero_cnpj_entidade": "11294402000162",
+                            "nome_razao_social": "PREFEITURA MUNICIPAL DO CABO DE SANTO AGOSTINHO",
+                            "nome_fantasia": "USF SAO FRANCISCO I",
+                            "natureza_organizacao_entidade": "",
+                            "tipo_gestao": "M",
+                            "descricao_nivel_hierarquia": "",
+                            "descricao_esfera_administrativa": "",
+                            "codigo_tipo_unidade": 2,
+                            "codigo_cep_estabelecimento": "54530591",
+                            "endereco_estabelecimento": "RUA MANOEL DOMINGOS BARROS",
+                            "numero_estabelecimento": "38",
+                            "bairro_estabelecimento": "SAO FRANCISCO",
+                            "numero_telefone_estabelecimento": "(81)35249185",
+                            "latitude_estabelecimento_decimo_grau": -8.287,
+                            "longitude_estabelecimento_decimo_grau": -35.035,
+                            "endereco_email_estabelecimento": "",
+                            "numero_cnpj": "",
+                            "codigo_identificador_turno_atendimento": "03",
+                            "descricao_turno_atendimento": "ATENDIMENTOS NOS TURNOS DA MANHA E A TARDE",
+                            "estabelecimento_faz_atendimento_ambulatorial_sus": "SIM",
+                            "codigo_estabelecimento_saude": "2602900000124",
+                            "codigo_uf": 26,
+                            "codigo_ibge_municipio": 260290,
+                            "descricao_natureza_juridica_estabelecimento": "1244",
+                            "codigo_motivo_desabilitacao_estabelecimento": "",
+                            "estabelecimento_possui_centro_cirurgico": 0,
+                            "estabelecimento_possui_centro_obstetrico": 0,
+                            "estabelecimento_possui_centro_neonatal": 0,
+                            "estabelecimento_possui_atendimento_hospitalar": 0,
+                            "estabelecimento_possui_servico_apoio": 1,
+                            "estabelecimento_possui_atendimento_ambulatorial": 0,
+                            "codigo_atividade_ensino_unidade": "04",
+                            "codigo_natureza_organizacao_unidade": "",
+                            "codigo_nivel_hierarquia_unidade": "",
+                            "codigo_esfera_administrativa_unidade": ""
+                        },
+                        {
+                            "codigo_cnes": 132,
+                            "numero_cnpj_entidade": "11294402000162",
+                            "nome_razao_social": "PREFEITURA MUNICIPAL DO CABO DE SANTO AGOSTINHO",
+                            "nome_fantasia": "USF ROSARIO",
+                            "natureza_organizacao_entidade": "",
+                            "tipo_gestao": "M",
+                            "descricao_nivel_hierarquia": "",
+                            "descricao_esfera_administrativa": "",
+                            "codigo_tipo_unidade": 2,
+                            "codigo_cep_estabelecimento": "54505560",
+                            "endereco_estabelecimento": "RUA 01",
+                            "numero_estabelecimento": "12",
+                            "bairro_estabelecimento": "ROSARIO",
+                            "numero_telefone_estabelecimento": "(81)35249235",
+                            "latitude_estabelecimento_decimo_grau": -8.2838945,
+                            "longitude_estabelecimento_decimo_grau": -35.0320984,
+                            "endereco_email_estabelecimento": "",
+                            "numero_cnpj": "",
+                            "codigo_identificador_turno_atendimento": "03",
+                            "descricao_turno_atendimento": "ATENDIMENTOS NOS TURNOS DA MANHA E A TARDE",
+                            "estabelecimento_faz_atendimento_ambulatorial_sus": "SIM",
+                            "codigo_estabelecimento_saude": "2602900000132",
+                            "codigo_uf": 26,
+                            "codigo_ibge_municipio": 260290,
+                            "descricao_natureza_juridica_estabelecimento": "1244",
+                            "codigo_motivo_desabilitacao_estabelecimento": "",
+                            "estabelecimento_possui_centro_cirurgico": 0,
+                            "estabelecimento_possui_centro_obstetrico": 0,
+                            "estabelecimento_possui_centro_neonatal": 0,
+                            "estabelecimento_possui_atendimento_hospitalar": 0,
+                            "estabelecimento_possui_servico_apoio": 1,
+                            "estabelecimento_possui_atendimento_ambulatorial": 0,
+                            "codigo_atividade_ensino_unidade": "04",
+                            "codigo_natureza_organizacao_unidade": "",
+                            "codigo_nivel_hierarquia_unidade": "",
+                            "codigo_esfera_administrativa_unidade": ""
+                        }
+                    ]
+                }
+            },
             "codigo_tipo_unidade": {
                 "type" : "integer",
                 "properties" : {
@@ -65,6 +230,38 @@
                 }
             },
             "codigo_cnes": {
+                "type" : "integer",
+                "properties" : {
+                    "name" : {
+                        "type" : "integer"
+                    }
+                }
+            },
+            "estabelecimento_possui_centro_cirurgico": {
+                "type" : "integer",
+                "properties" : {
+                    "name" : {
+                        "type" : "integer"
+                    }
+                }
+            },
+            "estabelecimento_possui_centro_obstetrico": {
+                "type" : "integer",
+                "properties" : {
+                    "name" : {
+                        "type" : "integer"
+                    }
+                }
+            },      
+            "limit": {
+                "type" : "integer",
+                "properties" : {
+                    "name" : {
+                        "type" : "integer"
+                    }
+                }
+            },
+            "offset": {
                 "type" : "integer",
                 "properties" : {
                     "name" : {
@@ -96,7 +293,7 @@
                 "tags": [
                     "CNES"
                 ],
-                "summary": "Obtém tipo de unidade utilizando código.",
+                "summary": "Obtém tipo de unidade utilizando o código do tipo da unidade.",
                 "parameters": [
                     {
                         "name": "codigo_tipo_unidade",
@@ -113,7 +310,7 @@
                     "200": {
                         "description": "Tipo de Unidade foi encontrada com o código informado.",
                         "schema": {
-                        "$ref": "#/components/schemas/TipoUnidade"
+                        "$ref": "#/components/schemas/TipoUnidades"
                         }
                     },
                     "404": {
@@ -124,6 +321,110 @@
                     }
                 }
             }
+        },
+        "/estabelecimentos": {
+            "get" :{
+                "tags": [
+                    "CNES"
+                ],
+                "summary": "Obtém todos os estabelecimentos.",
+                "parameters": [
+                    {
+                        "name": "codigo_tipo_unidade",
+                        "in": "query",
+                        "description": "Filtra estabelecimentos pelo código do tipo de unidade",
+                        "required": false,
+                        "type": "integer",
+                        "schema" : {
+                            "$ref": "#/components/schemas/codigo_tipo_unidade"
+                        }
+                    },
+                    {
+                        "name": "estabelecimento_possui_centro_cirurgico",
+                        "in": "query",
+                        "description": "Filtra estabelecimentos que possuem (código 1) ou não (código 0) centro cirúrgico.",
+                        "required": false,
+                        "type": "integer",
+                        "enum": [0, 1],
+                        "schema" : {
+                            "$ref": "#/components/schemas/estabelecimento_possui_centro_cirurgico"
+                        }
+                    },
+                    {
+                        "name": "estabelecimento_possui_centro_obstetrico",
+                        "in": "query",
+                        "description": "Filtra estabelecimentos que possuem (código 1) ou não (código 0) centro obstétrico.",
+                        "required": false,
+                        "type": "integer",
+                        "enum": [0, 1],
+                        "schema" : {
+                            "$ref": "#/components/schemas/estabelecimento_possui_centro_obstetrico"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Quantidade de itens retornados por página. Deve ser menor ou igual 20.",
+                        "required": false,
+                        "type": "integer",
+                        "schema" : {
+                            "$ref": "#/components/schemas/limit"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Número da página de itens que deve ser retornada.",
+                        "required": false,
+                        "type": "integer",
+                        "schema" : {
+                            "$ref": "#/components/schemas/offset"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista com todos os estabelecimentos presentes na API.",
+                        "schema": {
+                        "$ref": "#/components/schemas/Estabelecimentos"
+                        }
+                    }
+                }
+            }
+        },
+        "/estabelecimentos/{codigo_cnes}":{
+            "get" : {
+                "tags": [
+                    "CNES"
+                ],
+                "summary": "Obtém tipo de unidade utilizando o código CNES.",
+                "parameters": [
+                    {
+                        "name": "codigo_cnes",
+                        "in": "path",
+                        "description": "código do estabelecimento",
+                        "required": true,
+                        "type": "integer",
+                        "schema" : {
+                            "$ref": "#/components/schemas/codigo_cnes"
+                        }
+                    }
+                ],               
+                "responses": {
+                    "200": {
+                        "description": "Estabelecimento foi encontrado com o código informado.",
+                        "schema": {
+                        "$ref": "#/components/schemas/Estabelecimento"
+                        }
+                    },
+                    "404": {
+                        "description": "Estabelecimento não foi encontrado com o código CNES informado.",
+                        "schema": {
+                            "$ref": "#/components/schemas/Estabelecimento"
+                        }
+                    }
+                }
+            }
         }
-    }
+     }
 }
