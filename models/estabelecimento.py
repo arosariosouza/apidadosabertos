@@ -141,15 +141,12 @@ class EstabelecimentoModel(database.Model):
         
         estabelecimentos = EstabelecimentoModel.query
         if codigo_tipo_unidade:
-            print('tipo_unidade')
             estabelecimentos = estabelecimentos.filter_by(codigo_tipo_unidade=codigo_tipo_unidade)
 
         if estabelecimento_possui_centro_cirurgico is not None:
-            print('cirurgico')
             estabelecimentos = estabelecimentos.filter_by(estabelecimento_possui_centro_cirurgico=estabelecimento_possui_centro_cirurgico)
 
         if estabelecimento_possui_centro_obstetrico is not None:
-            print('obstetrico')
             estabelecimentos = estabelecimentos.filter_by(estabelecimento_possui_centro_obstetrico=estabelecimento_possui_centro_obstetrico)
 
         return estabelecimentos.limit(limit).offset(offset)
