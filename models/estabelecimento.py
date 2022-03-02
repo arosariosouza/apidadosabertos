@@ -132,6 +132,24 @@ class EstabelecimentoModel(database.Model):
     def find_estabelecimento(codigo_cnes):
         return EstabelecimentoModel.query.filter_by(codigo_cnes=codigo_cnes).first()
 
+    def list_estabelecimentos(codigo_tipo_unidade=None,
+                            estabelecimento_possui_centro_cirurgico=None,
+                            estabelecimento_possui_centro_obstetrico=None,
+                            limit=None,
+                            offset=None,
+                            **params):
+        
+        estabelecimentos = EstabelecimentoModel.query
+        if codigo_tipo_unidade:
+            print('tipo_unidade')
+            estabelecimentos = estabelecimentos.filter_by(codigo_tipo_unidade=codigo_tipo_unidade)
 
-    def list_estabelecimentos():
-        return EstabelecimentoModel.query.all()
+        if estabelecimento_possui_centro_cirurgico is not None:
+            print('cirurgico')
+            estabelecimentos = estabelecimentos.filter_by(estabelecimento_possui_centro_cirurgico=estabelecimento_possui_centro_cirurgico)
+
+        if estabelecimento_possui_centro_obstetrico is not None:
+            print('obstetrico')
+            estabelecimentos = estabelecimentos.filter_by(estabelecimento_possui_centro_obstetrico=estabelecimento_possui_centro_obstetrico)
+
+        return estabelecimentos.limit(limit).offset(offset)

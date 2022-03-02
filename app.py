@@ -21,7 +21,6 @@ database.init_app(app)
 
 api = Api(app)
 
-
 api.add_resource(Estabelecimentos, '/estabelecimentos')
 api.add_resource(Estabelecimento, '/estabelecimentos/<int:codigo_cnes>')
 api.add_resource(TipoUnidades, '/tipounidades')
