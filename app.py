@@ -5,6 +5,7 @@ from flask_restful import Api
 
 from decouple import config
 
+from sql_alchemy import database
 from resources.estabelecimento import Estabelecimentos, Estabelecimento
 from resources.tipo_unidade import TipoUnidades, TipoUnidade
 
@@ -15,7 +16,11 @@ HOST = config('HOST', default='127.0.0.1')
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = config('SQLALCHEMY_DATABASE_URI', default='sqlite:///db.sqlite3')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = config('SQLALCHEMY_TRACK_MODIFICATIONS', default=False, cast=bool)
+
+database.init_app(app)
+
 api = Api(app)
+
 
 api.add_resource(Estabelecimentos, '/estabelecimentos')
 api.add_resource(Estabelecimento, '/estabelecimentos/<int:codigo_cnes>')
