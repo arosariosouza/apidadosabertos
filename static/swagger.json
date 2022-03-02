@@ -1,0 +1,129 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "description": "API para disponibilização de dados abertos para repartições pertencentes ao DEMAS.",
+      "version": "0.0.1",
+      "title": "DEMAS - API de Dados Abertos",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "tags": [
+        {
+          "name": "CNES",
+          "description": "Cadastro Nacional de Estabelecimentos de Saúde"
+        }
+    ],
+    "servers": [
+        {
+        "url": "/"
+        }
+    ],
+    "components": {
+        "schemas": {
+
+            "TipoUnidade": {
+                "type": "object",
+                "properties": {
+                    "codigo_tipo_unidade": {
+                    "type": "integer"
+                    },
+                    "descricao_tipo_unidade": {
+                    "type": "string"
+                    }
+                },
+                "example": {
+                        "codigo_tipo_unidade": 80,
+                        "descricao_tipo_unidade": "LABORATORIO DE SAUDE PUBLICA"
+                }
+            },
+            "TipoUnidades": {
+                "type": "array",
+                "items": {
+                    "$ref":"#/components/schemas/TipoUnidade"
+                },
+                "example": {
+                    "TipoUnidades": [
+                        {
+                            "codigo_tipo_unidade": 80,
+                            "descricao_tipo_unidade": "LABORATORIO DE SAUDE PUBLICA"
+                        },
+                        {
+                            "codigo_tipo_unidade": 81,
+                            "descricao_tipo_unidade": "CENTRAL DE REGULACAO DO ACESSO"
+                        }
+                    ]
+                }
+            },
+            "codigo_tipo_unidade": {
+                "type" : "integer",
+                "properties" : {
+                    "name" : {
+                        "type" : "integer"
+                    }
+                }
+            },
+            "codigo_cnes": {
+                "type" : "integer",
+                "properties" : {
+                    "name" : {
+                        "type" : "integer"
+                    }
+                }
+            }            
+        }
+    },
+    "paths": {
+        "/tipounidades": {
+            "get" :{
+                "tags": [
+                    "CNES"
+                ],
+                "summary": "Obtém todos os tipos de unidade.",               
+                "responses": {
+                    "200": {
+                        "description": "Lista com todos os tipos de unidades presentes na API.",
+                        "schema": {
+                        "$ref": "#/components/schemas/TipoUnidade"
+                        }
+                    }
+                }
+            }
+        },
+        "/tipounidades/{codigo_tipo_unidade}":{
+            "get" : {
+                "tags": [
+                    "CNES"
+                ],
+                "summary": "Obtém tipo de unidade utilizando código.",
+                "parameters": [
+                    {
+                        "name": "codigo_tipo_unidade",
+                        "in": "path",
+                        "description": "código do tipo de unidade",
+                        "required": true,
+                        "type": "integer",
+                        "schema" : {
+                            "$ref": "#/components/schemas/codigo_tipo_unidade"
+                        }
+                    }
+                ],               
+                "responses": {
+                    "200": {
+                        "description": "Tipo de Unidade foi encontrada com o código informado.",
+                        "schema": {
+                        "$ref": "#/components/schemas/TipoUnidade"
+                        }
+                    },
+                    "404": {
+                        "description": "Tipo de Unidade não foi encontrada com o código informado.",
+                        "schema": {
+                            "$ref": "#/components/schemas/TipoUnidade"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
