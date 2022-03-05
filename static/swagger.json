@@ -397,7 +397,7 @@
                 "tags": [
                     "CNES"
                 ],
-                "summary": "Obtém tipo de unidade utilizando o código CNES.",
+                "summary": "Obtém estabelecimento utilizando o código CNES.",
                 "parameters": [
                     {
                         "name": "codigo_cnes",
