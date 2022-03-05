@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import urllib.parse
 
 from flask import Flask, render_template
 from flask_restful import Api
@@ -14,8 +15,16 @@ from resources.tipo_unidade import TipoUnidades, TipoUnidade
 DEBUG = config('DEBUG', default=False, cast=bool)
 HOST = config('HOST', default='127.0.0.1')
 
+SQLALCHEMY_DATABASE_USER = config('SQLALCHEMY_DATABASE_USER', default= '')
+SQLALCHEMY_DATABASE_PASSWORD = urllib.parse.quote_plus(config('SQLALCHEMY_DATABASE_PASSWORD', default= ''))
+SQLALCHEMY_DATABASE_SERVER = config('SQLALCHEMY_DATABASE_SERVER', default= '')
+SQLALCHEMY_DATABASE_DATABASE = config('SQLALCHEMY_DATABASE_DATABASE', default= '')
+SQLALCHEMY_DATABASE_URI = 'postgresql://%s:%s@%s/%s' \
+    % (SQLALCHEMY_DATABASE_USER, SQLALCHEMY_DATABASE_PASSWORD, SQLALCHEMY_DATABASE_SERVER, SQLALCHEMY_DATABASE_DATABASE)
+
+
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = config('SQLALCHEMY_DATABASE_URI', default='sqlite:///db.sqlite3')
+app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = config('SQLALCHEMY_TRACK_MODIFICATIONS', default=False, cast=bool)
 
 SWAGGER_URL = '/api'
