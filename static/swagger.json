@@ -277,13 +277,22 @@
                 "tags": [
                     "CNES"
                 ],
-                "summary": "Obtém todos os tipos de unidade.",               
+                "summary": "Obtém todos os tipos de unidade.",                               
                 "responses": {
                     "200": {
                         "description": "Lista com todos os tipos de unidades presentes na API.",
-                        "schema": {
-                        "$ref": "#/components/schemas/TipoUnidade"
-                        }
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TipoUnidade"
+                                }
+                            },
+                            "text/csv": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }                        
                     }
                 }
             }
@@ -309,8 +318,17 @@
                 "responses": {
                     "200": {
                         "description": "Tipo de Unidade foi encontrada com o código informado.",
-                        "schema": {
-                        "$ref": "#/components/schemas/TipoUnidades"
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TipoUnidades"
+                                }
+                            },
+                            "text/csv": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     },
                     "404": {
@@ -385,8 +403,17 @@
                 "responses": {
                     "200": {
                         "description": "Lista com todos os estabelecimentos presentes na API.",
-                        "schema": {
-                        "$ref": "#/components/schemas/Estabelecimentos"
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Estabelecimentos"
+                                }
+                            },
+                            "text/csv": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     }
                 }
@@ -413,8 +440,17 @@
                 "responses": {
                     "200": {
                         "description": "Estabelecimento foi encontrado com o código informado.",
-                        "schema": {
-                        "$ref": "#/components/schemas/Estabelecimento"
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Estabelecimento"
+                                }
+                            },
+                            "text/csv": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     },
                     "404": {
