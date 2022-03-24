@@ -10,6 +10,7 @@ LABEL Description="Container de execucao API de Dados Abertos - DEMAS"
 WORKDIR /root
 USER root
 
+ADD helpers.py /root
 ADD app.py /root
 ADD requirements.txt /root
 ADD runtime.txt /root
