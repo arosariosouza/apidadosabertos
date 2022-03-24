@@ -3,7 +3,7 @@ services:
   web:
     container_name: apidadosabertos
     restart: always
-    image: allansouza/apidadosabertos:0.4
+    image: allansouza/apidadosabertos:0.5
     env_file:
       - variables.env
     ports:
