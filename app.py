@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 import urllib.parse
 
+import flask
 from flask import Flask, render_template
 from flask_restful import Api
 from flask_swagger_ui import get_swaggerui_blueprint
 
 from decouple import config
+from helpers import data_to_string
 
 from sql_alchemy import database
 from resources.estabelecimento import Estabelecimentos, Estabelecimento
@@ -42,6 +44,14 @@ app.register_blueprint(SWAGGER_BLUEPRINT, url_prefix=SWAGGER_URL)
 database.init_app(app)
 
 api = Api(app)
+
+@api.representation('text/csv')
+def output_csv(data, code, headers=None):
+    resp = flask.make_response(data_to_string(data) , code)                       
+    resp.headers.extend(headers or {})                                        
+
+    return resp
+
 
 api.add_resource(Estabelecimentos, '/estabelecimentos')
 api.add_resource(Estabelecimento, '/estabelecimentos/<int:codigo_cnes>')
