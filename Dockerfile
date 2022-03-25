@@ -11,6 +11,7 @@ WORKDIR /root
 USER root
 
 ADD helpers.py /root
+ADD wsgi.py /root
 ADD app.py /root
 ADD requirements.txt /root
 ADD runtime.txt /root
@@ -29,7 +30,7 @@ COPY resources/tipo_unidade.py  /root/resources/tipo_unidade.py
 
 RUN apt update && apt -y install python3 python3-venv python3-pip && apt clean && pip install -r /root/requirements.txt
 
-CMD ["/root/app.py"]
-ENTRYPOINT ["/usr/bin/python3"]
+CMD ["--bind", "0.0.0.0:5000", "wsgi:app"]
+ENTRYPOINT ["gunicorn"]
 
 EXPOSE 5000
