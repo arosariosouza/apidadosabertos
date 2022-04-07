@@ -30,6 +30,8 @@ COPY resources/tipo_unidade.py  /root/resources/tipo_unidade.py
 
 RUN apt update && apt -y install python3 python3-venv python3-pip && apt clean && pip install -r /root/requirements.txt
 
+COPY swagger-ui/index.template.html /usr/local/lib/python3.8/dist-packages/flask_swagger_ui/templates/index.template.html
+
 CMD ["--bind", "0.0.0.0:5000", "wsgi:app"]
 ENTRYPOINT ["gunicorn"]
 
