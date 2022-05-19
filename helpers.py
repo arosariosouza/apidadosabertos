@@ -2,7 +2,7 @@ def data_to_string(value):
     delimiter = ';'
 
     def __prepare_csv_value(value):
-        return ''.join(('"', value.replace(delimiter,''), '"')) if type(value) is str else str(value)
+        return ''.join(('"', value.replace(delimiter,''), '"')) if type(value) is str else str(value) if value is not None else ''
 
     def __instance_to_list(_data):
         columns = []
