@@ -12,6 +12,7 @@ from helpers import data_to_string
 from sql_alchemy import database
 from resources.estabelecimento import Estabelecimentos, Estabelecimento
 from resources.tipo_unidade import TipoUnidades, TipoUnidade
+from resources.projeto import Projetos, Projeto
 
 
 DEBUG = config('DEBUG', default=False, cast=bool)
@@ -59,6 +60,8 @@ api.add_resource(Estabelecimentos, '/estabelecimentos')
 api.add_resource(Estabelecimento, '/estabelecimentos/<int:codigo_cnes>')
 api.add_resource(TipoUnidades, '/tipounidades')
 api.add_resource(TipoUnidade, '/tipounidades/<int:codigo_tipo_unidade>')
+api.add_resource(Projetos, '/projetos')
+api.add_resource(Projeto, '/projetos/<int:codigo_sequencial_projeto>')
 
 
 @app.route('/')
