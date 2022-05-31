@@ -13,6 +13,10 @@
         {
           "name": "CNES",
           "description": "Cadastro Nacional de Estabelecimentos de Saúde"
+        },
+        {
+            "name": "Projetos",
+            "description": "Cadastro de Projetos de Pesquisa na Plataforma Brasil"
         }
     ],
     "servers": [
@@ -22,7 +26,105 @@
     ],
     "components": {
         "schemas": {
-
+            "Projeto": {
+                "type": "object",
+                "properties": {
+                    "numero_caae": {
+                        "type": "string"
+                    },
+                    "titulo_projeto_pesquisa": {
+                        "type": "string"
+                    },
+                    "nome_comite_etica_pesquisa": {
+                        "type": "string"
+                    },
+                    "municipio_comite_etica_pesquisa": {
+                        "type": "string"
+                    },
+                    "uf_comite_etica_pesquisa": {
+                        "type": "string"
+                    },
+                    "data_submissao_projeto_pesquisa": {
+                        "type": "string"
+                    },
+                    "numero_parecer": {
+                        "type": "float"
+                    },
+                    "data_submissao_ultima_versao_projeto_pesquisa": {
+                        "type": "string"
+                    },
+                    "data_emissao_parecer": {
+                        "type": "string"
+                    },
+                    "situacao_parecer": {
+                        "type": "string"
+                    },
+                    "nome_instituicao_proponente": {
+                        "type": "string"
+                    },
+                    "municipio_instituicao_proponente": {
+                        "type": "string"
+                    },
+                    "uf_instituicao_proponente": {
+                        "type": "string"
+                    }
+                },
+                "example": {
+                    "numero_caae": "61122616600005291",
+                    "titulo_projeto_pesquisa": "Efeitos de vídeo modelação no ensino de brincar simbólico para indivíduos com Transtorno do Espectro Autista.",
+                    "nome_comite_etica_pesquisa": "Universidade Veiga de Almeida - UVA/RJ",
+                    "municipio_comite_etica_pesquisa": "Rio de Janeiro",
+                    "uf_comite_etica_pesquisa": "RJ",
+                    "data_submissao_projeto_pesquisa": "2016-10-15",
+                    "numero_parecer ": 2137884.0,
+                    "data_submissao_ultima_versao_projeto_pesquisa": "2017-08-10",
+                    "data_emissao_parecer": "2017-06-26",
+                    "situacao_parecer": "Pendente",
+                    "nome_instituicao_proponente": "ASSOCIACAO PARADIGMA CENTRO DE CIENCIAS E TECNOLOGIA DO COMPORTAMENTO",
+                    "municipio_instituicao_proponente": "São Paulo",
+                    "uf_instituicao_proponente": "SP"
+                }
+            },
+            "Projetos": {
+                "type": "array",
+                "items": {
+                    "$ref":"#/components/schemas/Projeto"
+                },
+                "example": {
+                    "Projetos": [
+                        {
+                            "numero_caae": "61122616600005291",
+                            "titulo_projeto_pesquisa": "Efeitos de vídeo modelação no ensino de brincar simbólico para indivíduos com Transtorno do Espectro Autista.",
+                            "nome_comite_etica_pesquisa": "Universidade Veiga de Almeida - UVA/RJ",
+                            "municipio_comite_etica_pesquisa": "Rio de Janeiro",
+                            "uf_comite_etica_pesquisa": "RJ",
+                            "data_submissao_projeto_pesquisa": "2016-10-15",
+                            "numero_parecer ": 2137884.0,
+                            "data_submissao_ultima_versao_projeto_pesquisa": "2017-08-10",
+                            "data_emissao_parecer": "2017-06-26",
+                            "situacao_parecer": "Pendente",
+                            "nome_instituicao_proponente": "ASSOCIACAO PARADIGMA CENTRO DE CIENCIAS E TECNOLOGIA DO COMPORTAMENTO",
+                            "municipio_instituicao_proponente": "São Paulo",
+                            "uf_instituicao_proponente": "SP"
+                        },
+                        {
+                            "numero_caae": "82847517000005243",
+                            "titulo_projeto_pesquisa": "PENSANDO AS BARREIRAS DE INCLUSÃO NA FACULDADE DE EDUCAÇÃO DA UNIVERSIDADE FEDERAL FLUMINENSE",
+                            "nome_comite_etica_pesquisa": "Faculdade de Medicina da Universidade Federal Fluminense - FMUFF",
+                            "municipio_comite_etica_pesquisa": "Niterói",
+                            "uf_comite_etica_pesquisa": "RJ",
+                            "data_submissao_projeto_pesquisa": "2017-09-21",
+                            "numero_parecer ": 2831174.0,
+                            "data_submissao_ultima_versao_projeto_pesquisa": "2018-06-28",
+                            "data_emissao_parecer": "2018-08-20",
+                            "situacao_parecer": "Pendente",
+                            "nome_instituicao_proponente": "Curso Mestrado Profissional em Diversidade e Inclusão",
+                            "municipio_instituicao_proponente": "Niterói",
+                            "uf_instituicao_proponente": "RJ"
+                        }
+                    ]
+                }
+            },
             "TipoUnidade": {
                 "type": "object",
                 "properties": {
@@ -253,6 +355,38 @@
                     }
                 }
             },      
+            "uf_comite_etica_pesquisa": {
+                "type" : "string",
+                "properties" : {
+                    "name" : {
+                        "type" : "string"
+                    }
+                }
+            },      
+            "uf_instituicao_proponente": {
+                "type" : "string",
+                "properties" : {
+                    "name" : {
+                        "type" : "string"
+                    }
+                }
+            },      
+            "codigo_situacao_parecer": {
+                "type" : "int",
+                "properties" : {
+                    "name" : {
+                        "type" : "int"
+                    }
+                }
+            },      
+            "numero_caae": {
+                "type" : "string",
+                "properties" : {
+                    "name" : {
+                        "type" : "string"
+                    }
+                }
+            },      
             "limit": {
                 "type" : "integer",
                 "properties" : {
@@ -272,6 +406,126 @@
         }
     },
     "paths": {
+        "/projetos": {
+            "get" :{
+                "tags": [
+                    "Projetos"
+                ],
+                "summary": "Obtém todos os projetos.",                               
+                "parameters": [
+                    {
+                        "name": "uf_comite_etica_pesquisa",
+                        "in": "query",
+                        "description": "Filtra projetos pelo estado do comitê de ética e pesquisa",
+                        "required": false,
+                        "type": "string",
+                        "schema" : {
+                            "$ref": "#/components/schemas/uf_comite_etica_pesquisa."
+                        }
+                    },
+                    {
+                        "name": "codigo_situacao_parecer",
+                        "in": "query",
+                        "description": "Filtra projetos pela situação do parecer: 1 - Aprovado, 2 - Aprovado com Recomendação, 3 - Devolvido com Recomendação, 4 - Não aprovado, 5 - Pendente, 6 - Retirado.",
+                        "required": false,
+                        "type": "int",
+                        "schema" : {
+                            "$ref": "#/components/schemas/codigo_situacao_parecer"
+                        }
+                    },
+                    {
+                        "name": "uf_instituicao_proponente",
+                        "in": "query",
+                        "description": "Filtra projetos pelo estado da instituição proponente.",
+                        "required": false,
+                        "type": "integer",
+                        "schema" : {
+                            "$ref": "#/components/schemas/uf_instituicao_proponente"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Quantidade de itens retornados por página. Deve ser menor ou igual 20.",
+                        "required": false,
+                        "type": "integer",
+                        "schema" : {
+                            "$ref": "#/components/schemas/limit"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Número da página de itens que deve ser retornada.",
+                        "required": false,
+                        "type": "integer",
+                        "schema" : {
+                            "$ref": "#/components/schemas/offset"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista com todos os projetos presentes na API.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Projeto"
+                                }
+                            },
+                            "text/csv": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }                        
+                    }
+                }
+            }
+        },
+        "/projetos/{numero_caae}":{
+            "get" : {
+                "tags": [
+                    "Projetos"
+                ],
+                "summary": "Obtém projeto utilizando o número CAAE (Certificado de Apresentação de Apreciação Ética).",
+                "parameters": [
+                    {
+                        "name": "numero_caae",
+                        "in": "path",
+                        "description": "número do certificado de apresentação de apreciação ética (apenas dígitos)",
+                        "required": true,
+                        "type": "string",
+                        "schema" : {
+                            "$ref": "#/components/schemas/numero_caae"
+                        }
+                    }
+                ],               
+                "responses": {
+                    "200": {
+                        "description": "Projeto foi encontrado com o número CAAE informado.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Projeto"
+                                }
+                            },
+                            "text/csv": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Tipo de Unidade não foi encontrada com o código informado.",
+                        "schema": {
+                            "$ref": "#/components/schemas/Projeto"
+                        }
+                    }
+                }
+            }
+        },
         "/tipounidades": {
             "get" :{
                 "tags": [
@@ -321,7 +575,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TipoUnidades"
+                                    "$ref": "#/components/schemas/TipoUnidade"
                                 }
                             },
                             "text/csv": {

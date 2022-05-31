@@ -22,11 +22,13 @@ COPY static/swagger.json /root/static/swagger.json
 
 COPY models/__init__.py /root/models/__init__.py 
 COPY models/estabelecimento.py /root/models/estabelecimento.py 
-COPY models/tipo_unidade.py /root/models/tipo_unidade.py 
+COPY models/tipo_unidade.py /root/models/tipo_unidade.py
+COPY models/projeto.py /root/models/projeto.py
 
 COPY resources/__init__.py /root/resources/__init__.py 
 COPY resources/estabelecimento.py  /root/resources/estabelecimento.py 
-COPY resources/tipo_unidade.py  /root/resources/tipo_unidade.py 
+COPY resources/tipo_unidade.py  /root/resources/tipo_unidade.py
+COPY resources/projeto.py  /root/resources/projeto.py
 
 RUN apt update && apt -y install python3 python3-venv python3-pip && apt clean && pip install -r /root/requirements.txt
 

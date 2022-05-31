@@ -61,7 +61,7 @@ api.add_resource(Estabelecimento, '/estabelecimentos/<int:codigo_cnes>')
 api.add_resource(TipoUnidades, '/tipounidades')
 api.add_resource(TipoUnidade, '/tipounidades/<int:codigo_tipo_unidade>')
 api.add_resource(Projetos, '/projetos')
-api.add_resource(Projeto, '/projetos/<int:codigo_sequencial_projeto>')
+api.add_resource(Projeto, '/projetos/<string:numero_caae>')
 
 
 @app.route('/')
