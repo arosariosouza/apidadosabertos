@@ -15,7 +15,7 @@
           "description": "Cadastro Nacional de Estabelecimentos de Saúde"
         },
         {
-            "name": "Projetos",
+            "name": "Plataforma Brasil",
             "description": "Cadastro de Projetos de Pesquisa na Plataforma Brasil"
         }
     ],
@@ -409,7 +409,7 @@
         "/projetos": {
             "get" :{
                 "tags": [
-                    "Projetos"
+                    "Plataforma Brasil"
                 ],
                 "summary": "Obtém todos os projetos.",                               
                 "parameters": [
@@ -486,7 +486,7 @@
         "/projetos/{numero_caae}":{
             "get" : {
                 "tags": [
-                    "Projetos"
+                    "Plataforma Brasil"
                 ],
                 "summary": "Obtém projeto utilizando o número CAAE (Certificado de Apresentação de Apreciação Ética).",
                 "parameters": [
