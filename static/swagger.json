@@ -2,7 +2,7 @@
     "openapi": "3.0.0",
     "info": {
       "description": "API para disponibilização de dados abertos para repartições pertencentes ao DEMAS.",
-      "version": "1.3.2",
+      "version": "1.3.3",
       "title": "DEMAS - API de Dados Abertos",
       "license": {
         "name": "MIT",
